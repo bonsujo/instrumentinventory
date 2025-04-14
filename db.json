@@ -1,0 +1,19 @@
+{
+    "instruments": [
+      {
+        "id": "YAM123",
+        "instrument_name": "Yamaha Acoustic Guitar",
+        "instrument_type": "Guitar",
+        "price": 499,
+        "in_stock": true
+      },
+      {
+        "id": "ROLX88",
+        "instrument_name": "Roland X88 Keyboard",
+        "instrument_type": "Keyboard",
+        "price": 899,
+        "in_stock": false
+      }
+    ]
+  }
+  
