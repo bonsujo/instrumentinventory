@@ -1,5 +1,5 @@
-import { getAllInstruments, getInstrumentById } from "@/lib/api";
 import Link from "next/link";
+import { getAllInstruments, getInstrumentById } from "../../lib/api";
 
 export async function generateStaticParams() {
   const instruments = await getAllInstruments();
