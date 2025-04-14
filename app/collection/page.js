@@ -1,4 +1,4 @@
-import Link from "next/link";
+import InstrumentCard from "../../components/InstrumentCard";
 import { getAllInstruments } from "../../lib/api";
 
 export default async function CollectionPage() {
@@ -6,12 +6,9 @@ export default async function CollectionPage() {
 
   return (
     <div>
-      <h1>Instruments</h1>
+      <h1>Instruments Collection</h1>
       {instruments.map(instr => (
-        <div key={instr.id} style={{ marginBottom: '10px', border: '1px solid gray', padding: '10px' }}>
-          <p><strong>{instr.id}</strong>: {instr.instrument_name}</p>
-          <Link href={`/collection/${instr.id}`}>More</Link>
-        </div>
+        <InstrumentCard key={instr.id} instrument={instr} />
       ))}
     </div>
   );
