@@ -7,7 +7,12 @@ export default async function CollectionPage() {
   return (
     <div>
       <h1>Instrument Collection</h1>
-      <div>
+      <div style={{
+        display: "flex",
+        flexWrap: "wrap",
+        gap: "16px",
+        marginTop: "20px"
+      }}>
         {instruments.map((instrument) => (
           <InstrumentCard key={instrument.id} instrument={instrument} />
         ))}
