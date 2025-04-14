@@ -1,5 +1,5 @@
-import { getAllInstruments } from "@/lib/api";
 import Link from "next/link";
+import { getAllInstruments } from "../../lib/api";
 
 export default async function CollectionPage() {
   const instruments = await getAllInstruments();

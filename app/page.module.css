@@ -10,7 +10,7 @@
 
 .subheading {
   font-size: 1.2rem;
-  color: #555;
+  color: rgb(188, 188, 188);
 }
 
 .buttonGroup {
@@ -20,14 +20,14 @@
 .button {
   margin: 10px;
   padding: 10px 20px;
-  background-color: #0070f3;
+  background-color: #ffffff00;
   color: white;
-  border: none;
-  border-radius: 8px;
+  border: 2px solid white;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
 .button:hover {
-  background-color: #0059c1;
+  background-color: #3e609a64;
 }
