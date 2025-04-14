@@ -3,7 +3,7 @@ import { getAllInstruments, getInstrumentById } from "../../../lib/api";
 
 export async function generateStaticParams() {
     const instruments = await getAllInstruments();
-    return instruments.map(instr => ({ id: instr.id }));
+    return instruments.map(instrument => ({ id: String(instrument.id) }));
   }
   
   export default async function InstrumentDetail({ params }) {

@@ -1,28 +1,28 @@
 {
     "instruments": [
       {
-        "id": 1,
+        "id": "YHMAG",
         "instrument_name": "Yamaha Acoustic Guitar",
         "instrument_type": "Guitar",
         "price": 499.99,
         "year_made": 2010
       },
       {
-        "id": 2,
+        "id": "RXK88",
         "instrument_name": "Roland X88 Keyboard",
         "instrument_type": "Keyboard",
         "price": 899.99,
         "year_made": 2013
       },
       {
-        "id": 3,
+        "id": "PDK",
         "instrument_name": "Pearl Export Drum Kit",
         "instrument_type": "Drum",
         "price": 499.99,
         "year_made": 2015
       },
       {
-        "id": 4,
+        "id": "YHMV",
         "instrument_name": "Yamaha YEV-104 Violin",
         "instrument_type": "Violin",
         "price": 499.99,
