@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "../../../styles/instrument.module.css";
 
 export async function generateStaticParams() {
   const res = await fetch('http://localhost:4000/instruments');
@@ -14,17 +15,20 @@ export async function generateStaticParams() {
     const instrument = await res.json();
 
     return (
-      <div>
-        <Link href="/collection">Back</Link>
-        <h2>{instrument.instrument_name}</h2>
-        <table>
+      <div className={styles.container}>
+        <Link href="/collection" className={styles.backLink}>← Back to Collection</Link>
+        <h2 className={styles.heading}>{instrument.instrument_name}</h2>
+        <table className={styles.table}>
           <tbody>
             {Object.entries(instrument).map(([key, value]) => (
-              <tr key={key}><td>{key}</td><td>{value}</td></tr>
+              <tr key={key}>
+                <td className={styles.key}>{key}</td>
+                <td className={styles.value}>{value}</td>
+              </tr>
             ))}
           </tbody>
         </table>
       </div>
     );
-  }
+}
   
