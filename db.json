@@ -4,29 +4,36 @@
       "id": "PDK",
       "instrument_name": "Pearl Export Drum Kit",
       "instrument_type": "Drum",
-      "price": 499.99,
-      "year_made": 2015
+      "price": 478,
+      "year_made": 2020
     },
     {
       "id": "YHMV",
       "instrument_name": "Yamaha YEV-104 Violin",
       "instrument_type": "Violin",
-      "price": 499.99,
+      "price": 499,
       "year_made": 2022
     },
     {
       "id": "APBG",
       "instrument_name": "Affinity Precision Bass Guitar",
       "instrument_type": "Guitar",
-      "price": 399.99,
+      "price": 399,
       "year_made": 2020
     },
     {
       "id": "ES35",
       "instrument_name": "Gibson Eletric Guitar",
       "instrument_type": "Guitar",
-      "price": 3999.99,
+      "price": 3999,
       "year_made": 2010
+    },
+    {
+      "id": "DMX8",
+      "instrument_name": "Desktop Analog Synth",
+      "instrument_type": "Keyboard",
+      "price": 4060,
+      "year_made": 2021
     }
   ]
 }

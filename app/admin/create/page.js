@@ -18,7 +18,7 @@ export default function CreatePage() {
 
       <label>
         Type:
-        <input name="type" type="text" required />
+        <input name="instrument_type" type="text" required />
       </label>
 
       <label>
