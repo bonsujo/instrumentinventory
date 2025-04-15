@@ -1,12 +1,8 @@
 'use client';
-import { deleteInstrument } from "../lib/actions";
+
+import { deleteInstrument } from "../lib/api";
 
 export default function InstrumentTable({ instrument }) {
-  const handleDelete = async (e) => {
-    e.preventDefault();
-    await deleteInstrument(instrument.id);
-  };
-
   return (
     <tr>
       <td>{instrument.id}</td>
@@ -15,7 +11,7 @@ export default function InstrumentTable({ instrument }) {
       <td>${instrument.price}</td>
       <td>{instrument.year_made}</td>
       <td>
-        <form action={handleDelete}>
+        <form action={() => deleteInstrument(instrument.id)}>
           <button
             type="submit"
             style={{

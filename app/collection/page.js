@@ -1,22 +1,19 @@
-import InstrumentCard from "../../components/InstrumentCard";
-import { getAllInstruments } from "../../lib/api";
+import Link from "next/link";
 
 export default async function CollectionPage() {
-  const instruments = await getAllInstruments();
+  const res = await fetch('http://localhost:4000/instruments');
+  const instruments = await res.json();
 
   return (
     <div>
       <h1>Instrument Collection</h1>
-      <div style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "16px",
-        marginTop: "20px"
-      }}>
-        {instruments.map((instrument) => (
-          <InstrumentCard key={instrument.id} instrument={instrument} />
+      <ul>
+        {instruments.map(({ id, instrument_name }) => (
+          <li key={id}>
+            {id}: {instrument_name} - <Link href={`/collection/${id}`}>more</Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
