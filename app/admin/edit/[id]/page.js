@@ -1,19 +1,18 @@
-import EditForm from "../../../../components/EditForm";
+import EditForm from "./form";
 
-export default async function EditPage({ params }) {
-    const { id } = params;
-  
-    const res = await fetch(`http://localhost:4000/instruments/${id}`);
-    if (!res.ok) {
-      return <p>Instrument with {id} not found</p>;
-    }
-  
-    const instrument = await res.json();
-  
-    return (
-      <div>
-        <h1>Edit Instrument</h1>
-        <EditForm instrument={instrument} />
-      </div>
-    );
+export default async function EditPage(props) {
+  const { id } = props.params;
+
+  const res = await fetch(`http://localhost:4000/instruments/${id}`);
+  if (!res.ok) {
+    return <div>Instrument not found.</div>;
   }
+
+  const data = await res.json();
+
+  return (
+    <div>
+      <EditForm instrument={data} />
+    </div>
+  );
+}

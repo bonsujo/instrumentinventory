@@ -1,31 +1,38 @@
 import Link from "next/link";
-import InstrumentTableCard from "../../components/InstrumentTable";
-import { getAllInstruments } from "../../lib/api";
+import { deleteInstrument } from "../../lib/actions";
 
 export default async function AdminPage() {
-  const instruments = await getAllInstruments();
+  const res = await fetch('http://localhost:4000/instruments');
+  const instruments = await res.json();
+
+  const instrumentList = Array.isArray(instruments) ? instruments : [];
 
   return (
     <div>
-      <h1>Admin Dashboard</h1>
-      <Link href="/admin/create" style={{ color: "blue", textDecoration: "underline" }}>
-        Create New
-      </Link>
-      <table border="1" cellPadding="8" style={{ marginTop: "20px", borderCollapse: "collapse" }}>
+      <Link href="/admin/create">Create New</Link>
+      <table>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Instrument Name</th>
-            <th>Type</th>
-            <th>Price</th>
-            <th>Year Made</th>
-            <th>D</th>
-            <th>E</th>
+            <th>ID</th><th>Name</th><th>Type</th><th>Price</th><th>Year</th><th>D</th><th>E</th>
           </tr>
         </thead>
         <tbody>
-          {instruments.map((instrument) => (
-            <InstrumentTableCard key={instrument.id} instrument={instrument} />
+          {instrumentList.map(i => (
+            <tr key={i.id}>
+              <td>{i.id}</td>
+              <td>{i.instrument_name}</td>
+              <td>{i.type}</td>
+              <td>{i.price}</td>
+              <td>{i.year_made}</td>
+              <td>
+                <form action={deleteInstrument.bind(null, i.id)}>
+                  <button type="submit">D</button>
+                </form>
+              </td>
+              <td>
+                <Link href={`/admin/edit/${i.id}`}>E</Link>
+              </td>
+            </tr>
           ))}
         </tbody>
       </table>

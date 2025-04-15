@@ -1,20 +1,6 @@
 {
   "instruments": [
     {
-      "id": "YHMAG",
-      "instrument_name": "Yamaha Acoustic Guitar",
-      "instrument_type": "Guitar",
-      "price": 499.99,
-      "year_made": 2010
-    },
-    {
-      "id": "RXK88",
-      "instrument_name": "Roland X88 Keyboard",
-      "instrument_type": "Keyboard",
-      "price": 899.99,
-      "year_made": 2013
-    },
-    {
       "id": "PDK",
       "instrument_name": "Pearl Export Drum Kit",
       "instrument_type": "Drum",
@@ -29,11 +15,18 @@
       "year_made": 2022
     },
     {
-      "id": "SQBG",
-      "instrument_name": "Affinity Series Precision Bass",
+      "id": "APBG",
+      "instrument_name": "Affinity Precision Bass Guitar",
       "instrument_type": "Guitar",
       "price": 399.99,
       "year_made": 2020
+    },
+    {
+      "id": "ES35",
+      "instrument_name": "Gibson Eletric Guitar",
+      "instrument_type": "Guitar",
+      "price": 3999.99,
+      "year_made": 2025
     }
   ]
 }
