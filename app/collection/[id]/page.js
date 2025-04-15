@@ -11,7 +11,8 @@ export async function generateStaticParams() {
     if (!res.ok) {
       return <div>No item with ID {params.id} exists.</div>;
     }
-  
+    const instrument = await res.json();
+
     return (
       <div>
         <Link href="/collection">Back</Link>
