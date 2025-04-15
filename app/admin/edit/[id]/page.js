@@ -1,9 +1,9 @@
 import EditForm from "./form";
 
-export default async function EditPage(props) {
-  const { id } = props.params;
+export default async function EditPage({params}) {
 
-  const res = await fetch(`http://localhost:4000/instruments/${id}`);
+  const res = await fetch(`http://localhost:4000/instruments/${params.id}`);
+  cache: 'no-store';
   if (!res.ok) {
     return <div>Instrument not found.</div>;
   }
