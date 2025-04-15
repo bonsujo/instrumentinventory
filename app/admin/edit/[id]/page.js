@@ -1,13 +1,19 @@
 import EditForm from "../../../../components/EditForm";
-import { getInstrumentById } from "../../../../lib/api";
 
-export default async function EditPage({params}){
-    const instrument = await getInstrumentById(params.id)
-
-    return(
-        <div>
-            <h1>Edit Instrument</h1>
-            {instrument ? <EditForm instrument = {instrument} /> : <p>Instrument not found</p>}
-        </div>
-    )
-}
+export default async function EditPage({ params }) {
+    const { id } = params;
+  
+    const res = await fetch(`http://localhost:4000/api/instruments/${id}`);
+    if (!res.ok) {
+      return <p>Instrument not found</p>;
+    }
+  
+    const instrument = await res.json();
+  
+    return (
+      <div>
+        <h1>Edit Instrument</h1>
+        <EditForm instrument={instrument} />
+      </div>
+    );
+  }

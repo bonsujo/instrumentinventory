@@ -1,7 +1,7 @@
 'use client';
 import { deleteInstrument } from "../lib/actions";
 
-export default function InstrumentTableCard({ instrument }) {
+export default function InstrumentTable({ instrument }) {
   const handleDelete = async (e) => {
     e.preventDefault();
     await deleteInstrument(instrument.id);

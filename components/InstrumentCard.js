@@ -1,4 +1,3 @@
-// app/collection/InstrumentCard.js
 import Link from "next/link";
 
 export default function InstrumentCard({ instrument }) {
